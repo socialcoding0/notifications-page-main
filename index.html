@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+
+  <title>Frontend Mentor | Notifications page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+
+</head>
+
+<body>
+  <main>
+    <section id="project">
+      <header class="header">
+        <div class="logo-text">
+          <h1>Notifications</h1>
+          <span class="length"></span>
+        </div>
+        <button class="btn-read">
+          Mark all as read
+        </button>
+      </header>
+
+      <div class="
+      notification unread">
+        <img src="./assets/images/avatar-mark-webber.webp" alt="avatar-mark-webber">
+        <div class="notification-description">
+          <p class="remark"><span class="name">Mark Webber</span> reacted to your recent post <span class="action">My
+              first tournament today!</span>
+            <span class="pink-circle"></span>
+          </p>
+          <p class="remark-time">1m ago</p>
+
+        </div>
+      </div>
+
+      <div class="
+                  notification unread">
+        <img src="./assets/images/avatar-angela-gray.webp" alt="avatar-angela-gray">
+        <div class="notification-description">
+          <p class="remark"><span class="name">Angela Gray</span> followed you
+            <span class="pink-circle"></span>
+          </p>
+          <p class="remark-time">5m ago</p>
+
+        </div>
+      </div>
+      <div class="
+                  notification unread">
+        <img src="./assets/images/avatar-jacob-thompson.webp" alt="avatar-jacob-thompson">
+        <div class="notification-description">
+          <p class="remark"><span class="name">Jacob Thompson</span> has joined group <span
+              class="action group-name">Chess Club</span>
+            <span class="pink-circle"></span>
+          </p>
+          <p class="remark-time">1 day ago</p>
+
+        </div>
+      </div>
+      <div class="notification read img-align-top">
+        <img src="./assets/images/avatar-rizky-hasanuddin.webp" alt="avatar-rizky-hasanuddin">
+        <div class="notification-description">
+          <p class="remark"><span class="name">Rizky Hasanuddin</span> sent you a private message
+
+          </p>
+          <p class="remark-time">5 days ago</p>
+          <p class="rizky-comment">
+            Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and
+            I'm already having lots of fun and improving my game.
+          </p>
+        </div>
+
+      </div>
+      <div class="
+                        notification read">
+        <img src="./assets/images/avatar-kimberly-smith.webp" alt="avatar-kimberly-smith">
+        <div class="notification-description">
+          <p class="remark"><span class="name">Kimberly Smith</span> commented on your picture
+          </p>
+
+          <p class="remark-time">2 weeks ago</p>
+
+        </div>
+        <img src="./assets/images/image-chess.webp" class="chess-img" alt="image-chess">
+      </div>
+
+      <div class="
+                  notification read">
+        <img src="./assets/images/avatar-nathan-peterson.webp" alt="avatar-nathan-peterson">
+        <div class="notification-description">
+          <p class="remark"><span class="name">Nathan Peterson</span> reacted to your recent post <span class="action">5
+              end-game strategies to increase your win rate
+            </span>
+          </p>
+          <p class="remark-time">2 weeks ago</p>
+
+        </div>
+      </div>
+
+      <div class="
+                        notification read">
+        <img src="./assets/images/avatar-anna-kim.webp" alt="avatar-anna-kim">
+        <div class="notification-description">
+          <p class="remark"><span class="name">Anna Kim</span> left the group<span class="action group-name"> Chess
+              Club</span>
+          </p>
+          <p class="remark-time">1m ago</p>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
+
+
+  <!-- Angela Gray followed you
+  5m ago
+
+  Jacob Thompson has joined your group Chess Club
+  1 day ago
+
+  Rizky Hasanuddin sent you a private message
+  5 days ago
+
+
+  Kimberly Smith commented on your picture
+  1 week ago
+
+  Nathan Peterson reacted to your recent post 5 end-game strategies to increase your win rate
+  2 weeks ago
+
+  Anna Kim left the group Chess Club
+  2 weeks ago -->
+  <script>
+
+
+    document.querySelector(".length").textContent = document.querySelectorAll(".unread").length;
+
+
+    document.querySelector(".btn-read").addEventListener("click", function () {
+
+      for (let not of document.querySelectorAll(".notification")) {
+
+        if (not.classList.contains("unread")) {
+          not.classList.remove("unread");
+          document.querySelector(".length").textContent = document.querySelectorAll(".unread").length;
+          document.querySelector(".pink-circle").remove();
+
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
